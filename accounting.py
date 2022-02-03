@@ -1,4 +1,24 @@
+
+
 melon_cost = 1.00
+
+def customer_payment_status(name, melons, paid):
+    expected = melon_cost * melons
+    if expected != paid:
+        print(f"{name} paid ${paid:.2f},", f"expected ${expected:.2f}")
+
+
+customer_payment_info = open("customer-orders.txt")
+
+for line in customer_payment_info:
+    line = line.rstrip()
+    words = line.split('|')
+    index, name, melons, paid = words
+    melons = int(melons)
+    paid = float(paid)
+    customer_payment_status(name, melons, paid)
+
+"""
 
 customer1_name = "Joe"
 customer1_melons = 5
@@ -59,3 +79,4 @@ if customer6_expected != customer6_paid:
     print(f"{customer6_name} paid ${customer6_paid:.2f},",
           f"expected ${customer6_expected:.2f}"
           )
+"""
