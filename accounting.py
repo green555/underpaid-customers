@@ -19,6 +19,8 @@ for line in customer_payment_info:
     paid = float(paid)
     customer_payment_status(name, melons, paid)
 
+customer_payment_info.close()
+
 """
 
 customer1_name = "Joe"
