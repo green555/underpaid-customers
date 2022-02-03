@@ -1,11 +1,12 @@
 
 
-melon_cost = 1.00
+MELON_COST = 1.00
 
 def customer_payment_status(name, melons, paid):
-    expected = melon_cost * melons
+    expected = MELON_COST * melons
     if expected != paid:
-        print(f"{name} paid ${paid:.2f},", f"expected ${expected:.2f}")
+        payment_status = "underpaid" if expected < paid else "overpaid"
+        print(f"{name} has paid ${paid:.2f}, which is {payment_status}.")
 
 
 customer_payment_info = open("customer-orders.txt")
